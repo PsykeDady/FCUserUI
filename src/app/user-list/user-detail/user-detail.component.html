@@ -1,0 +1,25 @@
+<div class="container-fluid bg-body-secondary text-body rounded pb-1" *ngIf="user">
+	<div class="row">
+		<div class="col-8 col-md-9 col-lg-10">
+			<h2>{{user.nome}} {{user.cognome}}</h2>
+		</div>
+		<div class="col-4 col-md-3 col-lg-2 p-2 text-end">
+			<button class="btn btn-sm btn-danger me-1">
+				<span class="fa fa-trash" aria-hidden="true"></span>
+			</button>
+			<button class="btn btn-sm btn-warning">
+				<span class="fa fa-pencil" aria-hidden="true"></span>
+			</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="offset-1 col-10">
+			{{user.indirizzo}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12 small text-muted text-end">
+			{{user.email}}
+		</div>
+	</div>
+</div>
