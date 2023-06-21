@@ -7,13 +7,17 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserDetailComponent } from './user-list/user-detail/user-detail.component';
 import { UserService } from 'src/services/UserServices.service';
+import { NewUserComponent } from './new-user/new-user.component';
+import { AddPopUpComponent } from './new-user/add-pop-up/add-pop-up.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchBarComponent,
     UserListComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    NewUserComponent,
+    AddPopUpComponent
   ],
   imports: [
 	BrowserModule,

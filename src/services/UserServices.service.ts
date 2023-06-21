@@ -5,23 +5,6 @@ import { User } from "src/models/User";
 export class UserService {
 
 	userList:User[]=[
-		new User("Davide","Galati","psdady@msn.com","Trav I Volta"),
-		new User("Giuseppe","Spaghetti","giuseppe@spaghetti.com","Via dalle palle"),
-		new User("Giuseppe","Spaghetti","giuseppe@spaghetti.com","Via dalle palle"),
-		new User("Giuseppe","Spaghetti","giuseppe@spaghetti.com","Via dalle palle"),
-		new User("Giuseppe","Spaghetti","giuseppe@spaghetti.com","Via dalle palle"),
-		new User("Giuseppe","Spaghetti","giuseppe@spaghetti.com","Via dalle palle"),
-		new User("Giuseppe","Spaghetti","giuseppe@spaghetti.com","Via dalle palle"),
-		new User("Giuseppe","Spaghetti","giuseppe@spaghetti.com","Via dalle palle"),
-		new User("Giuseppe","Spaghetti","giuseppe@spaghetti.com","Via dalle palle"),
-		new User("Giuseppe","Spaghetti","giuseppe@spaghetti.com","Via dalle palle"),
-		new User("Giuseppe","Spaghetti","giuseppe@spaghetti.com","Via dalle palle"),
-		new User("Giuseppe","Spaghetti","giuseppe@spaghetti.com","Via dalle palle"),
-		new User("Giuseppe","Spaghetti","giuseppe@spaghetti.com","Via dalle palle"),
-		new User("Giuseppe","Spaghetti","giuseppe@spaghetti.com","Via dalle palle"),
-		new User("Giuseppe","Spaghetti","giuseppe@spaghetti.com","Via dalle palle"),
-		new User("Giuseppe","Spaghetti","giuseppe@spaghetti.com","Via dalle palle"),
-		new User("Giuseppe","Spaghetti","giuseppe@spaghetti.com","Via dalle palle"),
 	]
 	constructor() {}
 }
