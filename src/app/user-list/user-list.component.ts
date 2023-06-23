@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { UserService } from 'src/services/UserServices.service';
 import { User } from 'src/models/User';
+import {ActivatedRoute} from '@angular/router'
 
 @Component({
 	selector: 'app-user-list',
@@ -12,12 +13,15 @@ export class UserListComponent implements OnInit {
 
 	userList:User[]=[]
 
-	constructor(private userService:UserService) {
-		this.userList=userService.userList;
+	constructor(private userService:UserService, activateRoute:ActivatedRoute ) {
+		
+		activateRoute.data.subscribe(data=>userService.userList=data["userlist"])
+		
+
 	}
 
 	ngOnInit(): void {
-
+		this.userList=this.userService.userList;
 	}
 
 }

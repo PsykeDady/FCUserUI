@@ -19,8 +19,6 @@ export class UserListResolver implements Resolve<User[]> {
 
 
 
-		return  this.httpclient.get(USER_SERVER_API_USER_LIST,{}).pipe(map( v=>{
-			
-		}));
+		return this.httpclient.get<User[]>(USER_SERVER_API_USER_LIST,{});
 	}
 }

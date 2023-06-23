@@ -10,6 +10,8 @@ import { UserService } from 'src/services/UserServices.service';
 import { NewUserComponent } from './new-user/new-user.component';
 import { AddPopUpComponent } from './new-user/add-pop-up/add-pop-up.component';
 import { AppRouting } from './app.routing';
+import { UserListResolver } from 'src/resolvers/userlist.resolver';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,9 +26,10 @@ import { AppRouting } from './app.routing';
 	BrowserModule,
 	FormsModule,
 	ReactiveFormsModule,
+	HttpClientModule,
 	AppRouting
   ],
-  providers: [UserService],
+  providers: [UserService, UserListResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
