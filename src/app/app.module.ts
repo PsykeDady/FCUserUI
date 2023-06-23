@@ -9,6 +9,7 @@ import { UserDetailComponent } from './user-list/user-detail/user-detail.compone
 import { UserService } from 'src/services/UserServices.service';
 import { NewUserComponent } from './new-user/new-user.component';
 import { AddPopUpComponent } from './new-user/add-pop-up/add-pop-up.component';
+import { AppRouting } from './app.routing';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AddPopUpComponent } from './new-user/add-pop-up/add-pop-up.component';
   imports: [
 	BrowserModule,
 	FormsModule,
-	ReactiveFormsModule
+	ReactiveFormsModule,
+	AppRouting
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
