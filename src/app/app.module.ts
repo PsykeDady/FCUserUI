@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AppComponent } from './app.component';
-import { SearchBarComponent } from './search-bar/search-bar.component';
-import { UserListComponent } from './user-list/user-list.component';
-import { UserDetailComponent } from './user-list/user-detail/user-detail.component';
-import { UserService } from 'src/services/UserServices.service';
-import { NewUserComponent } from './new-user/new-user.component';
-import { AddPopUpComponent } from './new-user/add-pop-up/add-pop-up.component';
-import { AppRouting } from './app.routing';
-import { UserListResolver } from 'src/resolvers/userlist.resolver';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserListResolver } from 'src/resolvers/userlist.resolver';
+import { UserService } from 'src/services/UserServices.service';
+import { AppComponent } from './app.component';
+import { AppRouting } from './app.routing';
+import { NewUserComponent } from './new-user/new-user.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
+import { UserDetailComponent } from './user-list/user-detail/user-detail.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { AddPopupService } from 'src/services/add-popup.service';
+import { AddPopupComponent } from './add-popup/add-popup.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     UserListComponent,
     UserDetailComponent,
     NewUserComponent,
-    AddPopUpComponent
+    AddPopupComponent
   ],
   imports: [
 	BrowserModule,
@@ -29,7 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
 	HttpClientModule,
 	AppRouting
   ],
-  providers: [UserService, UserListResolver],
+  providers: [UserService, UserListResolver, AddPopupService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

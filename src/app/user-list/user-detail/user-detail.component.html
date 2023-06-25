@@ -4,10 +4,10 @@
 			<h2>{{user.nome}} {{user.cognome}}</h2>
 		</div>
 		<div class="col-4 col-md-3 col-lg-2 p-2 text-end">
-			<button class="btn btn-sm btn-danger me-1">
+			<button class="btn btn-sm btn-danger me-1" (click)="deleteUser()">
 				<span class="fa fa-trash" aria-hidden="true"></span>
 			</button>
-			<button class="btn btn-sm btn-warning">
+			<button class="btn btn-sm btn-warning" (click)="editUser()">
 				<span class="fa fa-pencil" aria-hidden="true"></span>
 			</button>
 		</div>

@@ -1,0 +1,6 @@
+.backdrop{
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(126, 126, 126, 0.373);
+	overflow: hidden;
+}

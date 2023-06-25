@@ -1,17 +1,22 @@
-<div class="container-fluid mb-5">
-	<div class="row justify-content-center align-items-center g-2">
-		<div class="col-12">
-			<app-search-bar></app-search-bar>
-		</div>
-		<hr class="col-12">
-		<div class="col-12">
-			<router-outlet></router-outlet>
+<div id="total">
+	<div *ngIf="popup">
+		<add-popup-component></add-popup-component>
+	</div>
+	<div class="container-fluid mb-5">
+		<div class="row justify-content-center align-items-center g-2">
+			<div class="col-12">
+				<app-search-bar></app-search-bar>
+			</div>
+			<hr class="col-12">
+			<div class="col-12">
+				<router-outlet></router-outlet>
+			</div>
 		</div>
 	</div>
-</div>
-<br><br>
-<div class="position-fixed bottom-0 end-0 text-end m-5">
-	<button class="btn btn-lg btn-info rounded-circle text-muted">
-		<span class="fa fa-plus"></span>
-	</button>
+	<br><br>
+	<div class="position-fixed bottom-0 end-0 text-end m-5">
+		<button class="btn btn-lg btn-info rounded-circle text-muted"  (click)="onAddClick()">
+			<span class="fa fa-plus"></span>
+		</button>
+	</div>
 </div>

@@ -1,24 +1,18 @@
 import { Injectable } from '@angular/core';
-import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
 import { Observable } from 'rxjs';
 import { User } from 'src/models/User';
-import {HttpClient} from  "@angular/common/http";
 
-import { USER_SERVER_API_USER_LIST } from 'src/constants/userlist.contants';
-
-import {map} from "rxjs"
+import { UserService } from 'src/services/UserServices.service';
 
 @Injectable({ providedIn: 'root' })
 export class UserListResolver implements Resolve<User[]> {
 
-	constructor(private httpclient: HttpClient){
+	constructor(private userService:UserService){
 
 	}
 
-	resolve(route: ActivatedRouteSnapshot): Observable<User[]> | Promise<User[]> | User[] {
-
-
-
-		return this.httpclient.get<User[]>(USER_SERVER_API_USER_LIST,{});
+	resolve(): Observable<User[]> | Promise<User[]> | User[] {
+		return this.userService.getList();
 	}
 }

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { UserService } from 'src/services/UserServices.service';
 import { User } from 'src/models/User';
-import {ActivatedRoute} from '@angular/router'
 
 @Component({
 	selector: 'app-user-list',
@@ -11,17 +10,12 @@ import {ActivatedRoute} from '@angular/router'
 })
 export class UserListComponent implements OnInit {
 
-	userList:User[]=[]
+	status:{userList?:User[]}  = {}
 
-	constructor(private userService:UserService, activateRoute:ActivatedRoute ) {
-		
-		activateRoute.data.subscribe(data=>userService.userList=data["userlist"])
-		
-
+	constructor(private userService:UserService) {
+		this.status=this.userService.status
 	}
 
-	ngOnInit(): void {
-		this.userList=this.userService.userList;
-	}
+	ngOnInit(): void {}
 
 }
