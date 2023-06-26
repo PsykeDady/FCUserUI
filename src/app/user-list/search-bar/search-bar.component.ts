@@ -17,14 +17,8 @@ export class SearchBarComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.searchBar.get("searchTermInput")?.valueChanges.subscribe(nuovoValore=> {
-			console.log("searchBarChanges:",nuovoValore)
+			this.searchService.searchUser(nuovoValore)
 		})
-	}
-
-	search(){
-		let target=this.searchBar.get("searchTermInput");
-		if (target && target.value!=="")
-			this.searchService.searchUser(target.value)
 	}
 
 }

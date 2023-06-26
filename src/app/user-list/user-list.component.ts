@@ -21,6 +21,7 @@ export class UserListComponent implements OnInit {
 	) {
 		this.status=this.userService.status
 		this.searchService.searchEvent.subscribe(v=>{
+			console.log(v)
 			this.searchResults=v
 		})
 	}
@@ -28,7 +29,7 @@ export class UserListComponent implements OnInit {
 	ngOnInit(): void {}
 
 	public emptySearch():boolean{
-		return this.searchResults.empty();
+		return this.searchResults.byName.length===0 && this.searchResults.byLastName.length===0 && this.searchResults.byAddress.length===0;
 	}
 
 }

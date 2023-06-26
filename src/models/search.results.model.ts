@@ -6,8 +6,4 @@ export class SearchResults {
 	byLastName:User[]=[];
 	byAddress:User[]=[];
 
-	public empty():boolean{
-		return this.byName.length===0 && this.byLastName.length===0 && this.byAddress.length===0;
-	}
-
 }
