@@ -19,8 +19,8 @@ export class NewUserComponent implements OnDestroy {
 		"lname":new FormControl("", [Validators.required]),
 		"address":new FormControl("", [Validators.required]),
 		"email":new FormControl("", [Validators.email,Validators.required]),
-	}); 
-	
+	});
+
 	constructor(
 		private userService:UserService,
 		private router:Router,
@@ -44,16 +44,21 @@ export class NewUserComponent implements OnDestroy {
 		let address=this.newuserform.get("address")?.value
 		let email=this.newuserform.get("email")?.value
 		let id=this.editUserService.user?.id;
-		
+
 		let u:User = new User(fname,lname,email,address,id);
 		let back:Function = ()=>{
 			this.router.navigateByUrl("/")
 		}
 		if(id) {
-			this.userService.editUser(u).subscribe(()=>{back})
-		} 
+			this.userService.editUser(u).subscribe(
+				()=>{back()},
+				error=> {
+					console.error(error)
+				}
+			)
+		}
 		else {
-			this.userService.addUser(u).subscribe(()=>{back})
+			this.userService.addUser(u).subscribe(()=>{back()})
 		}
 	}
 
