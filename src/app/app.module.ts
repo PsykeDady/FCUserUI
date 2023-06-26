@@ -13,6 +13,7 @@ import { UserDetailComponent } from './user-list/user-detail/user-detail.compone
 import { UserListComponent } from './user-list/user-list.component';
 import { AddPopupService } from 'src/services/add-popup.service';
 import { AddPopupComponent } from './add-popup/add-popup.component';
+import { EditUserService } from 'src/services/edit-user.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { AddPopupComponent } from './add-popup/add-popup.component';
 	HttpClientModule,
 	AppRouting
   ],
-  providers: [UserService, UserListResolver, AddPopupService],
+  providers: [UserService, UserListResolver, AddPopupService,EditUserService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

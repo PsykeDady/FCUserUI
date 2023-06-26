@@ -1,1 +1,50 @@
-<p>new-user works!</p>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-2">
+			<button class="btn btn-secondary fa fa-arrow-left col-12" routerLink="/">
+
+			</button>
+		</div>
+	</div>
+</div>
+<br>
+<form class="" [formGroup]="newuserform" (ngSubmit)="putuser()">
+	<legend>{{edit?"Edit User":"New User"}}</legend>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12 p-2 m-1">
+				<input type="text" class="form-control" formControlName="fname" placeholder="input first name"/>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 p-2 m-1">
+				<input type="text" class="form-control" formControlName="lname" placeholder="input last name" />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 p-2 m-1">
+				<input type="text" class="form-control" formControlName="address" placeholder="input address" />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 p-2 m-1">
+				<input type="text" class="form-control" formControlName="email" placeholder="address@email.domain" />
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="offset-md-6 col-12 col-md-3 mb-2 mb-md-0">
+				<button type="submit" class="btn btn-success col-12" [disabled]="newuserform.invalid">
+					post
+				</button>
+			</div>
+			<div class="col-12 col-md-3">
+				<button type="button" class="btn btn-danger col-12" (click)="reset()">
+					reset
+				</button>
+			</div>
+		</div>
+	</div>
+</form>
+

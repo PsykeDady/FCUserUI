@@ -28,6 +28,7 @@ export class UserService {
 	}
 
 	editUser(u:User):Observable<boolean> {
+		console.log(u.id)
 		return this.httpClient.put<boolean>(USER_SERVER_API_USER_UPDATE,u);
 	}
 

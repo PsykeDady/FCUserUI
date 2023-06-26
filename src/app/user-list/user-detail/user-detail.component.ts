@@ -4,7 +4,8 @@ import { User } from 'src/models/User';
 
 import { UserService } from 'src/services/UserServices.service';
 
-import { forkJoin } from 'rxjs';
+import { Router } from '@angular/router';
+import { EditUserService } from 'src/services/edit-user.service';
 
 @Component({
 	selector: 'app-user-detail',
@@ -16,7 +17,7 @@ export class UserDetailComponent implements OnInit {
 	@Input()
 	user:User|undefined=undefined;
 
-	constructor(private userService : UserService) { }
+	constructor(private userService : UserService, private editUserService:EditUserService, private router:Router) { }
 
 	ngOnInit(): void {
 	}
@@ -33,6 +34,7 @@ export class UserDetailComponent implements OnInit {
 	}
 
 	editUser(){
-		console.log("edit pressed")
+		this.editUserService.user=this.user;
+		this.router.navigateByUrl("/new")
 	}
 }

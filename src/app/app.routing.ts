@@ -6,7 +6,7 @@ import { NewUserComponent } from "./new-user/new-user.component";
 
 const appRoutes: Routes = [
 	{path:"",component: UserListComponent, resolve:{userlist:UserListResolver}},
-	{path:"new", component:NewUserComponent}
+	{path:"new", component:NewUserComponent},
 ]
 
 @NgModule({
