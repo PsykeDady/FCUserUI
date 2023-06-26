@@ -1,0 +1,14 @@
+<div class="row" *ngIf="userList&&userList.length>0; else noele">
+		<div class="col-12 mb-2" *ngFor="let item of userList">
+			<app-user-detail
+				[user]="item"
+			></app-user-detail>
+		</div>
+	</div>
+	<ng-template #noele>
+		<div class="row">
+			<div class="col-12">
+				No users!
+			</div>
+		</div>
+	</ng-template>

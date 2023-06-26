@@ -3,12 +3,13 @@ import { Injectable } from "@angular/core";
 import { Observable, map, tap } from "rxjs";
 import { USER_SERVER_API_UPLOAD_CSV, USER_SERVER_API_USER_ADD, USER_SERVER_API_USER_DELETE, USER_SERVER_API_USER_GET, USER_SERVER_API_USER_LIST, USER_SERVER_API_USER_SEARCH, USER_SERVER_API_USER_UPDATE } from "src/constants/userlist.contants";
 import { User } from "src/models/User";
+import { SearchResults } from "src/models/search.results.model";
 import { UploadFileResponse } from "src/models/uploadFile.response";
 
 @Injectable()
 export class UserService {
 
-	status: {userList?:User[]}= {
+	status: {userList:User[]}= {
 		userList:[]
 	}
 
@@ -37,8 +38,8 @@ export class UserService {
 		return this.httpClient.get<User>(USER_SERVER_API_USER_GET+id+"/");
 	}
 
-	searchUser(filter:string): Observable<User[][]> {
-		return this.httpClient.get<User[][]>(USER_SERVER_API_USER_SEARCH+filter+"/");
+	searchUser(filter:string): Observable<SearchResults> {
+		return this.httpClient.get<SearchResults>(USER_SERVER_API_USER_SEARCH+filter+"/");
 	}
 
 	uploadCSV(uploaded:File) : Observable<any> {

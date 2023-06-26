@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { UserService } from 'src/services/UserServices.service';
 import { User } from 'src/models/User';
+import { SearchService } from 'src/services/search.service';
+import { SearchResults } from 'src/models/search.results.model';
 
 @Component({
 	selector: 'app-user-list',
@@ -10,12 +12,23 @@ import { User } from 'src/models/User';
 })
 export class UserListComponent implements OnInit {
 
-	status:{userList?:User[]}  = {}
+	status:{userList:User[]}  = {userList:[]}
+	searchResults:SearchResults = new SearchResults();
 
-	constructor(private userService:UserService) {
+	constructor(
+		private userService:UserService,
+		private searchService:SearchService
+	) {
 		this.status=this.userService.status
+		this.searchService.searchEvent.subscribe(v=>{
+			this.searchResults=v
+		})
 	}
 
 	ngOnInit(): void {}
+
+	public emptySearch():boolean{
+		return this.searchResults.empty();
+	}
 
 }

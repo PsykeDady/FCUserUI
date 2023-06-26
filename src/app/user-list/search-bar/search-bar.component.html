@@ -2,7 +2,7 @@
 	<div class="row m-2">
 		<div class="col-12">
 			<form [formGroup]="searchBar">
-				<input type="text" class="form-control" placeholder="write some search term.." formControlName="searchTermInput">
+				<input type="text" class="form-control" placeholder="write some search term.." formControlName="searchTermInput" (change)="search()">
 			</form>
 		</div>
 	</div>

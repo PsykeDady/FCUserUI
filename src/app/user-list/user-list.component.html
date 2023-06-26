@@ -1,17 +1,17 @@
-
 <div class="container-fluid">
-	<div class="row" *ngIf="status.userList&&status.userList.length>0; else noele">
-		<div class="col-12 mb-2" *ngFor="let item of status.userList">
-			<app-user-detail
-				[user]="item"
-			></app-user-detail>
-		</div>
-	</div>
 	<div class="row">
-		<ng-template #noele>
-			<div class="col-12">
-				No users!
-			</div>
-		</ng-template>
+		<div class="col-12">
+			<app-search-bar></app-search-bar>
+		</div>
+		<hr class="col-12">
 	</div>
+	<fetched-list
+		[userList]="status.userList"
+		*ngIf="emptySearch(); else search"
+	></fetched-list>
+	<ng-template #search>
+		<search-list
+			[searchResult]="searchResults"
+		></search-list>
+	</ng-template>
 </div>
